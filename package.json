@@ -18,7 +18,9 @@
         "url": "https://github.com/naruyaizumi/liora/issues"
     },
     "engines": {
-        "bun": ">=1.3.0"
+ "bun": ">=1.3.0",
+ "node": ">=18.0.0",
+  "npm": ">=8.0.0"
     },
     "scripts": {
        "start": "bun run --smol src/main.js"
