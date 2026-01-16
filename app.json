@@ -1,0 +1,54 @@
+{
+  "name": "Liora WhatsApp Bot",
+  "description": "Advanced WhatsApp Bot with multiple features",
+  "repository": "https://github.com/naruyaizumi/liora",
+  "logo": "https://raw.githubusercontent.com/naruyaizumi/liora/main/assets/logo.png",
+  "keywords": ["whatsapp", "bot", "automation", "nodejs", "baileys"],
+  "env": {
+    "SESSION_NAME": {
+      "description": "Name for your WhatsApp session",
+      "value": "liora-session",
+      "required": false
+    },
+    "PREFIX": {
+      "description": "Command prefix for the bot",
+      "value": ".",
+      "required": false
+    },
+    "MODS": {
+      "description": "Admin phone numbers (comma separated)",
+      "required": false
+    },
+    "MONGODB_URI": {
+      "description": "MongoDB connection string for session storage",
+      "required": false
+    },
+    "REDIS_URL": {
+      "description": "Redis connection URL for caching",
+      "required": false
+    },
+    "PORT": {
+      "description": "Port for web server",
+      "value": "3000",
+      "required": false
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jontewks/puppeteer-heroku-buildpack"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "eco"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  }
+}
