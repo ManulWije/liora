@@ -1,0 +1,6 @@
+#!/bin/bash
+# Clean files that might interfere with Heroku build
+rm -rf node_modules/baileys
+rm -rf package-lock.json
+rm -rf yarn.lock
+rm -rf bun.lockb
